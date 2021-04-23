@@ -7,9 +7,17 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 export default function Login() {
+  const history = useHistory();
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      console.log(user);
+      history.push("/home");
+    }
+  });
+
   function signInWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
-
     firebase
       .auth()
       .signInWithPopup(provider)
