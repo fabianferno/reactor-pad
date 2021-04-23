@@ -1,6 +1,29 @@
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
+
+import "./firebase";
+
+import firebase from "firebase/app";
+import "firebase/auth";
 
 export default function Login() {
+  function signInWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+  }
+
   return (
     <section>
       <div
@@ -15,6 +38,7 @@ export default function Login() {
           color="primary"
           className="mt-3"
           style={{ textTransform: "capitalize" }}
+          onClick={signInWithGoogle}
         >
           Sign in with Google
         </Button>
