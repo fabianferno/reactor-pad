@@ -35,9 +35,12 @@ class PrivateRoute extends React.Component {
       return (
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "100vh", width: "100vw" }}
+          style={{
+            height: "100vh",
+            width: "100vw",
+          }}
         >
-          <LinearProgress className="w-25"></LinearProgress>
+          <LinearProgress className="w-25"> </LinearProgress>{" "}
         </div>
       );
     } else {
@@ -45,7 +48,13 @@ class PrivateRoute extends React.Component {
         const Component = this.props.component;
         return <Component />;
       } else {
-        return <Redirect to={{ pathname: "/" }} />;
+        return (
+          <Redirect
+            to={{
+              pathname: "/",
+            }}
+          />
+        );
       }
     }
   }

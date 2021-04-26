@@ -1,7 +1,7 @@
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
-import "./firebase";
+import "../firebase";
 
 import firebase from "firebase/app";
 import "firebase/auth";
