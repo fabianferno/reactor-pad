@@ -4,7 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import firebase from "firebase/app";
-import "firebase/firestore";
 import "../../firebase";
 
 export default function CreateNote() {
@@ -62,9 +61,8 @@ export default function CreateNote() {
           <TextField
             id="note"
             label="Create a new reaction..."
-            variant="filled"
+            variant="outlined"
             rows={4}
-            className="shadow-sm"
             fullWidth
             multiline
             onChange={handleChange}
