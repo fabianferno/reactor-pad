@@ -34,7 +34,7 @@ export default function CreateNote() {
     console.log(state.note);
     const note = state.note;
     var db = firebase.firestore();
-    if (state.note != "") {
+    if (state.note !== "") {
       db.collection("reacts")
         .add({
           note: note,

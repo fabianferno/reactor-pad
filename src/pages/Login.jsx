@@ -24,11 +24,11 @@ export default function Login() {
       .then((result) => {
         console.log(result);
         /** @type {firebase.auth.OAuthCredential} */
-        var credential = result.credential;
+        // var credential = result.credential;
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
       });
   }
 

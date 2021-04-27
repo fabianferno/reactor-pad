@@ -28,7 +28,7 @@ export default function GetNotes() {
 
         setState({ isLoaded: true, notes: notes });
       });
-  }, [setState]);
+  }, [setState]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="container mt-5">
